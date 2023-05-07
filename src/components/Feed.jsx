@@ -2,9 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import { Box, Stack, Typography } from "@mui/material";
 
-import Sidebar from "./Sidebar";
+import { Sidebar, Videos } from "./";
+
+import { fetchFromApi } from "../utils/fetchFromApi";
 
 const Feed = () => {
+  const [selectedCategory, setSelectedCategory] = useState("New");
+
+  useEffect(() => {
+    fetchFromApi(`search?part=snippet&q=${selectedCategory}`);
+  }, [selectedCategory]);
+
   return (
     <Stack
       sx={{
@@ -27,7 +35,10 @@ const Feed = () => {
           },
         }}
       >
-        <Sidebar />
+        <Sidebar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Typography
           className="copyright"
           variant="body2"
@@ -38,6 +49,34 @@ const Feed = () => {
         >
           Copyright 2023 ivandjoh
         </Typography>
+      </Box>
+      <Box
+        p={2}
+        sx={{
+          height: "90vh",
+          overflowY: "auto",
+          flex: 2,
+        }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{
+            color: "#fff",
+          }}
+        >
+          {selectedCategory}
+          <span
+            style={{
+              color: "#f31503",
+              marginLeft: 15,
+            }}
+          >
+            Videos
+          </span>
+        </Typography>
+        <Videos videos={[]} />
       </Box>
     </Stack>
   );
