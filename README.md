@@ -2,13 +2,12 @@
 
 ## Description
 
-This is a simple web application that allows users to search for videos on YouTube and save them to a database. Users can also view videos that other users have saved.
+This is a simple web application that displays all my subscribed videos on YouTube.  
+`Sorry, Not All, but some of them`.
 
 ## Motivation
 
-```bash
-This Project was Inspired by <a href="https://www.youtube.com/watch?v=VPVzx1ZOVuw">Javascript Mastery</a>.
-```
+This Project was Inspired by [Javascript Mastery](https://www.youtube.com/watch?v=VPVzx1ZOVuw).
 
 ## Technology Stack
 
