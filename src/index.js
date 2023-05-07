@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import TimeAgo from "javascript-time-ago";
 
-import App from './App';
-import './index.css';
+import en from "javascript-time-ago/locale/en.json";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./App";
+import "./index.css";
+
+TimeAgo.addDefaultLocale(en);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<App />);
