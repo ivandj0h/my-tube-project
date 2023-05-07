@@ -11,5 +11,6 @@ npm install --legacy-peer-deps
 ```
 
 ```bash
-change `"start": "react-scripts start"` to `"start": "react-scripts --openssl-legacy-provider start"` in `package.json`
+change `"start": "react-scripts start"` to
+`"start": "react-scripts --openssl-legacy-provider start"` in `package.json`
 ```
